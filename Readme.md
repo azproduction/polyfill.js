@@ -14,18 +14,21 @@ Usage
 -----
 
 ```js
-var polyfill = require('polyfill')
+var polyfill = require('polyfill');
 
 polyfill('Array.prototype.forEach', function(error, polyfillSource) {
   // return the JavaScript source for the given polyfill
-})
+});
 
-if (polyfill.defines('Date.now')) {
+// Or sync
+polyfill.sync('Array.prototype.forEach');
+
+if (polyfill('Date.now')) {
   // check if a polyfill is defined for a given feature name
 }
 
 // Print out list of defined polyfill names
-console.dir(polyfill.names)
+console.dir(polyfill());
 ```
 
 License
